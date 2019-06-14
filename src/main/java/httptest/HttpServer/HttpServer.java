@@ -13,7 +13,7 @@ import com.alibaba.fastjson.JSONPObject;
 
 public class HttpServer {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws InterruptedException {
         try {
             ServerSocket ss = new ServerSocket(8888);
             while(true){
@@ -60,10 +60,12 @@ public class HttpServer {
 
 
                 //发送回执
+
+                Thread.sleep(5000);
+
                 PrintWriter pw=new PrintWriter(socket.getOutputStream());
 
                JSONObject jsonObject = JSON.parseObject(sb.toString());
-
                 if(jsonObject.getString("tenant_name").toString().equals("test")){
                     pw.println("HTTP/1.1 200");
                     pw.println("Content-type:text/html");
