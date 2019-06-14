@@ -1,9 +1,6 @@
-/target
-.metadata
-.metadata/
+.target/
 .project
 .classpath
 .settings/
-*.iml
 /pom.xml
 *.class
