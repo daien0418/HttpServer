@@ -6,3 +6,4 @@
 .settings/
 *.iml
 /pom.xml
+*.class
