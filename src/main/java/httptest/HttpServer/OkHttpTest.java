@@ -25,12 +25,10 @@ public class OkHttpTest {
         call.enqueue(new Callback() {
 
             public void onResponse(Call arg0, Response arg1) throws IOException {
-                // TODO Auto-generated method stub
                 System.out.println("success");
             }
 
             public void onFailure(Call arg0, IOException arg1) {
-                // TODO Auto-generated method stub
                 System.out.println("fail");
             }
         });
