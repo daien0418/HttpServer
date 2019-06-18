@@ -4,6 +4,10 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -32,6 +36,13 @@ public class GuavaTest {
                 System.out.println(arg0);
             }
         }, listeningExecutorService);
+
+        Multimap<String, Integer> multimap = HashMultimap.create();
+        BiMap<String, Integer> biMap = HashBiMap.create();
+        biMap.put("first", 1);
+        biMap.put("second", 2);
+        biMap.inverse();
+
     }
 
 }
