@@ -1,4 +1,6 @@
-package httptest.HttpServer;
+package httptest.HttpTest;
+
+import static org.junit.Assert.assertTrue;
 
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
@@ -8,6 +10,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CompletableTest {
@@ -47,9 +50,9 @@ public class CompletableTest {
                 try {
                     TimeUnit.SECONDS.sleep(4);
                 } catch (InterruptedException e) {}
-                if (new Random().nextInt() % 2 >= 0) {
-                    int i = 12 / 0;
-                }
+//                if (new Random().nextInt() % 2 >= 0) {
+//                    int i = 12 / 0;
+//                }
             }
         }).whenComplete(new BiConsumer<Void, Throwable>() {
 
@@ -70,4 +73,50 @@ public class CompletableTest {
         TimeUnit.SECONDS.sleep(5);
     }
 
+    @Test
+    public void test1() {
+        assertTrue(false);
+    }
+
+    @Test
+    public void test2() {
+        assertTrue(false);
+    }
+
+    @Test
+    public void test3(){
+        assertTrue(true);
+    }
+
+    @Test
+    public void test4(){
+        assertTrue(true);
+    }
+
+    @Ignore
+    @Test
+    public void test5(){
+        assertTrue(false);
+    }
+
+    @Test
+    public void test6(){
+        throw new NullPointerException();
+    }
+
+    @Test
+    public void test7(){
+        assertTrue(false);
+    }
+
+    @Ignore
+    @Test
+    public void test8(){
+        assertTrue(false);
+    }
+
+    @Test
+    public void test9(){
+        throw new NullPointerException();
+    }
 }
