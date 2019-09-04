@@ -21,5 +21,10 @@ pipeline {
         echo '"this is my life"'
       }
     }
+    stage('stageLast') {
+      steps {
+        sh 'echo "last text content"'
+      }
+    }
   }
 }
